@@ -1,0 +1,154 @@
+1. size()
+Returns the current number of elements in the queue.
+Example:
+systemverilog
+Copy code
+int queue[$] = {1, 2, 3};
+$display("Queue size: %0d", queue.size()); // Outputs 3
+2. insert()
+Inserts an element at a specified index in the queue.
+Syntax: queue.insert(index, value);
+Example:
+systemverilog
+Copy code
+int queue[$] = {1, 2, 3};
+queue.insert(1, 5); // Inserts 5 at index 1
+// Queue becomes {1, 5, 2, 3}
+3. delete()
+Removes an element at a specified index from the queue.
+
+Syntax: queue.delete(index);
+
+Example:
+
+systemverilog
+Copy code
+int queue[$] = {1, 2, 3};
+queue.delete(1); // Removes element at index 1
+// Queue becomes {1, 3}
+Deleting All Elements: Use queue.delete() without an index to remove all elements.
+
+systemverilog
+Copy code
+int queue[$] = {1, 2, 3};
+queue.delete(); // Empties the queue
+4. push_front()
+Adds an element to the front (beginning) of the queue.
+Syntax: queue.push_front(value);
+Example:
+systemverilog
+Copy code
+int queue[$] = {1, 2, 3};
+queue.push_front(0); // Queue becomes {0, 1, 2, 3}
+5. push_back()
+Adds an element to the end (back) of the queue.
+Syntax: queue.push_back(value);
+Example:
+systemverilog
+Copy code
+int queue[$] = {1, 2, 3};
+queue.push_back(4); // Queue becomes {1, 2, 3, 4}
+6. pop_front()
+Removes and returns the first element in the queue.
+Syntax: queue.pop_front();
+Example:
+systemverilog
+Copy code
+int queue[$] = {1, 2, 3};
+int front_elem = queue.pop_front(); // front_elem is 1, queue becomes {2, 3}
+7. pop_back()
+Removes and returns the last element in the queue.
+Syntax: queue.pop_back();
+Example:
+systemverilog
+Copy code
+int queue[$] = {1, 2, 3};
+int back_elem = queue.pop_back(); // back_elem is 3, queue becomes {1, 2}
+8. find()
+Searches for the first occurrence of an element that matches a specified condition.
+Syntax: queue.find with (condition);
+Example:
+systemverilog
+Copy code
+int queue[$] = {1, 2, 3, 4};
+int index = queue.find with (item == 3); // index is 2
+9. find_index()
+Returns the index of the first element that matches a specified condition.
+Syntax: queue.find_index with (condition);
+Example:
+systemverilog
+Copy code
+int queue[$] = {1, 2, 3, 4};
+int idx = queue.find_index with (item > 2); // idx is 2
+10. find_first()
+Returns the first element that satisfies a specified condition.
+Syntax: queue.find_first with (condition);
+Example:
+systemverilog
+Copy code
+int queue[$] = {1, 2, 3, 4};
+int first_match = queue.find_first with (item > 2); // first_match is 3
+11. find_last()
+Returns the last element that satisfies a specified condition.
+Syntax: queue.find_last with (condition);
+Example:
+systemverilog
+Copy code
+int queue[$] = {1, 2, 3, 4};
+int last_match = queue.find_last with (item > 2); // last_match is 4
+12. unique()
+Filters the queue to keep only unique elements.
+Syntax: queue.unique();
+Example:
+systemverilog
+Copy code
+int queue[$] = {1, 2, 2, 3, 3};
+queue.unique(); // Queue becomes {1, 2, 3}
+13. sort()
+Sorts the elements in ascending order.
+Syntax: queue.sort();
+Example:
+systemverilog
+Copy code
+int queue[$] = {3, 1, 2};
+queue.sort(); // Queue becomes {1, 2, 3}
+14. reverse()
+Reverses the order of elements in the queue.
+Syntax: queue.reverse();
+Example:
+systemverilog
+Copy code
+int queue[$] = {1, 2, 3};
+queue.reverse(); // Queue becomes {3, 2, 1}
+15. shuffle()
+Randomizes the order of elements in the queue.
+Syntax: queue.shuffle();
+Example:
+systemverilog
+Copy code
+int queue[$] = {1, 2, 3};
+queue.shuffle(); // Queue becomes a random permutation, e.g., {2, 1, 3}
+16. min()
+Returns the minimum value in the queue.
+Syntax: queue.min();
+Example:
+systemverilog
+Copy code
+int queue[$] = {3, 1, 2};
+int min_val = queue.min(); // min_val is 1
+17. max()
+Returns the maximum value in the queue.
+Syntax: queue.max();
+Example:
+systemverilog
+Copy code
+int queue[$] = {3, 1, 2};
+int max_val = queue.max(); // max_val is 3
+18. sum()
+Returns the sum of all elements in the queue.
+Syntax: queue.sum();
+Example:
+systemverilog
+Copy code
+int queue[$] = {1, 2, 3};
+int total = queue.sum(); // total is 6
